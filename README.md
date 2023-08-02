@@ -1,3 +1,9 @@
+# How to executive the code?
+cmd `npm run [prefix q along with question number]`.
+
+## Example
+`npm run q1` for question 1 and `npm run q2` for question 2 respectively.
+
 # Question 1 - retryFailures
 
 Implement an asynchronous function `retryFailures` which accepts two parameters:
@@ -26,6 +32,26 @@ function createTargetFunction(succeedsOnAttempt: number) {
 }
 ```
 
+## Examples
+
+```javascript
+// succeeds on attempt number 3 
+retryFailures(createTargetFunction(3), 5).then((attempt) => { 
+  console.assert(attempt === 3); 
+});
+
+// fails on attempt number 2 and throws last error 
+retryFailures(createTargetFunction(3), 2).then(() => { 
+  throw new Error('should not succeed');
+}, (e) => {
+  console.assert(e.attempt === 2); 
+});
+
+// succeeds 
+retryFailures(createTargetFunction(10), 10).then((attempt) => { 
+  console.assert(attempt === 10); 
+});
+```
 
 # Question 2 - defaultArguments
 
@@ -70,7 +96,7 @@ The businessmen among you will know that it's often not easy to ﬁnd an appoint
 - If the meeting does not ﬁt into the schedules, return `null`
 - The duration of the meeting will be provided as an integer in minutes
 
-*Following these rules and looking at the example below the earliest time for a 60 minutes meeting would be 12:15.*
+__Following these rules and looking at the example below the earliest time for a 60 minutes meeting would be 12:15.__
 
 ## Example Schedule
 
