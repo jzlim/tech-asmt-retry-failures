@@ -4,9 +4,9 @@
   "description": "",
   "main": "",
   "scripts": {
-    "q1": "npx ts-node question-1.ts",
-    "q2": "npx ts-node question-2.ts",
-    "q3": "npx ts-node question-3.ts",
+    "q1": "npx ts-node src/question-1.ts",
+    "q2": "npx ts-node src/question-2.ts",
+    "q3": "npx ts-node src/question-3.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
