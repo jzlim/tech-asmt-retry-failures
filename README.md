@@ -85,7 +85,7 @@ console.assert(add5() === 19); // a=10, b=9
 ```
 
 
-# Question 3 - defaultArguments
+# Question 3 - find suitable schedules
 
 The businessmen among you will know that it's often not easy to ﬁnd an appointment. In this task we want to ﬁnd such an appointment automatically. You will be given the calendars of our businessmen and a duration for the meeting. Your task is to ﬁnd the earliest time, when every businessman is free for at least that duration.
 
