@@ -16,7 +16,7 @@ function defaultArguments(fn: Func, params: Args): Func {
       }
     }
 
-    return fn.apply(null, args);
+    return fn(...args);
   };
 
   defaultFunction.defaultArgNames = argNames;
@@ -61,11 +61,8 @@ function add(a: number, b: number): number {
 
 const add2 = defaultArguments(add, { b: 9 });
 console.assert(add2(10) === 19);
-console.log(add2(10) === 19);
 console.assert(add2(10, 7) === 17);
-console.log(add2(10, 7) === 17);
 console.assert(isNaN(add2()));
-console.log(isNaN(add2()));
 
 const add3 = defaultArguments(add2, { b: 3, a: 2 });
 console.assert(add3(10) === 13);
@@ -77,4 +74,3 @@ console.assert(add4(10, 10) === 20);
 
 const add5 = defaultArguments(add2, { a: 10 }); //extends add2
 console.assert(add5() === 19); // a=10, b=9
-console.log(add5() === 19); // a=10, b=9
