@@ -5,8 +5,7 @@ async function retryFailures<T>(
   // your code here
   let i = 0;
   let latestError: unknown;
-  while (i < retries) {
-    i++;
+  while (++i <= retries) {
     try {
       return await fn();
     } catch (error: unknown) {
